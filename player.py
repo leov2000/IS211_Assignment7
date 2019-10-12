@@ -5,6 +5,7 @@ class Player:
         self.score = 0
         self.name = name
         self.tally = []
+        self.rolling = False
 
     def reset_score(self):
         self.score = 0    
@@ -23,4 +24,10 @@ class Player:
         return self.score
 
     def get_player_name(self):
-        return self.name  
+        return self.name
+
+    def get_player_rolling_state(self):
+        return self.rolling
+
+    def set_player_rolling_state(self, boolean):  
+        self.rolling = boolean
