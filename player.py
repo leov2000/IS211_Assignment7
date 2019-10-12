@@ -6,6 +6,10 @@ class Player:
         self.name = name
         self.tally = []
 
+    def reset_score(self):
+        self.score = 0    
+        self.tally = []
+        
     def empty_score_tally(self):
         self.tally = []
     
