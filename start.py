@@ -64,13 +64,36 @@ def main():
     if is_int and game_num:
         players = [Player(player_num) for player_num in range(1, players +1)]
         games = [Game(players, Die()) for num in range(0, game_num)]
-        
+
+        while len(games):
+            current_game = games[0]
+            game_players = current_game.get_players()
+            # current_die = current_game.get_die()
+
+            while(current_game.check_highest_score()['player_score'] < 100):
+
+                for player in game_players:
+                    player.set_player_rolling_state(True)
+
+                    while player.get_player_rolling_state():
+                        player_input = input(f'Player {player.get_player_name()} would you like to ("r") roll or ("h") hold?')
+                        
+                        if player_input.lower() == 'h':
+                            player.set_player_rolling_state(False)
+                        elif player_input.lower() == 'r':
+                            print("rolling rolling rolling")
+                        else:
+                            print("Hmm.. not sure what that was, please click on 'r' or 'h' ")
+
+
+
     else:
         print(
             f'Something went wrong, you entered in "{keyed}"')
 
         logging.error(f'Error processing "{keyed}"')
         return SystemExit
+    print("Thank you for playing PIG. Please run the script to play again!")
 
 if __name__ == '__main__':
     main()
