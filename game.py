@@ -7,12 +7,6 @@ class Game:
         self.end = False
         self.die = die 
 
-    def check_score(self, players):
-        for player in self.players:
-            if player.get_player_score() >= 100:
-                print("you won")
-                self.reset_game()
-
 
     def reset_game(self):
         for player in self.players:
@@ -20,10 +14,23 @@ class Game:
 
         self.die = None 
         self.turn = None
+
+    def check_highest_score(self):
+        score_list = [{'player_name': player.name, 'player_score': player.score} for player in self.players]
+        highest_score = sorted(score_list, key= lambda k: k['player_score'])
+
+        return highest_score[0]
+   
     
     def roll_or_hold(self, player):
         pass 
         
     def next_turn(self, player):
         self.turn = player 
+    
+    def get_players(self):
+        return self.players
+
+    def get_die(self):
+        return self.die
 
