@@ -66,24 +66,40 @@ def main():
         games = [Game(players, Die()) for num in range(0, game_num)]
 
         while len(games):
-            current_game = games[0]
+            i = 0
+            current_game = games[i]
             game_players = current_game.get_players()
-            # current_die = current_game.get_die()
 
-            while(current_game.check_highest_score()['player_score'] < 100):
+            while(current_game.check_highest_score() < 100):
+                print(current_game.check_highest_score(), "current score")
 
                 for player in game_players:
                     player.set_player_rolling_state(True)
 
+
+                    # while player.get_player_rolling_state() and current_game.check_highest_score()['player_score'] < 100:
                     while player.get_player_rolling_state():
-                        player_input = input(f'Player {player.get_player_name()} would you like to ("r") roll or ("h") hold?')
+                        player_input = input(f'Player {player.get_player_name()} would you like to ("r") roll or ("h") hold?\n')
                         
                         if player_input.lower() == 'h':
-                            player.set_player_rolling_state(False)
+                            output = current_game.hold(player)
+                            print(current_game.get_score_list())
+
                         elif player_input.lower() == 'r':
-                            print("rolling rolling rolling")
+                            output = current_game.roll_die(player)
+                            print(output)
+
+                            if output == 1:
+                                print(current_game.get_score_list())
+                            
                         else:
                             print("Hmm.. not sure what that was, please click on 'r' or 'h' ")
+                    
+                    if current_game.check_highest_score() >= 100:
+                        println("breaking loop")
+                        break 
+            
+        print(i, "game ended I think")
 
 
 

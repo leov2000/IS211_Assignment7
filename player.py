@@ -14,10 +14,13 @@ class Player:
     def empty_score_tally(self):
         self.tally = []
     
-    def push_to_score_tally(self):
-        return self.tally
+    def sum_tally(self):
+        return sum(self.tally)
+
+    def append_score_tally(self, num):
+        self.tally.append(num)
     
-    def add_player_score(self, score_num):
+    def add_to_score(self, score_num):
         self.score = self.score + score_num
         
     def get_player_score(self):
