@@ -1,9 +1,11 @@
 class Game:
 
-    def __init__(self, players):
+    def __init__(self, players, die):
         self.players = players
         self.die = None 
         self.turn = None
+        self.end = False
+        self.die = die 
 
     def check_score(self, players):
         for player in self.players:
