@@ -1,7 +1,5 @@
-import uuid
-
 class Player:
-    def __init__(self, name = uuid.uuid4().hex):
+    def __init__(self, name):
         self.score = 0
         self.name = name
         self.tally = []

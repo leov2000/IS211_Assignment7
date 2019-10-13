@@ -34,8 +34,6 @@ def print_graphics(file_name):
     print(ascii_text)
     print(text_header)
 
-
-
 def print_unintended_keystroke():
     print("Hmm.. not sure what that was, please click on 'r' or 'h' ")
 
@@ -68,7 +66,6 @@ def print_high_score(score_dict, game_num):
     score = score_dict.get('player_score')
 
     print(f'\nPlayer {name} won GAME:{game_num} with a SCORE OF: {score}\n')
-
 
 def main():
     """

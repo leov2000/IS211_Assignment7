@@ -7,7 +7,6 @@ class Game:
         self.end = False
         self.die = die 
 
-
     def reset_game(self):
         for player in self.players:
             player.reset_score()
@@ -47,4 +46,4 @@ class Game:
     
     def get_players(self):
         return self.players
-    
+        
