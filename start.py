@@ -64,10 +64,12 @@ def main():
     if is_int and game_num:
         players = [Player(player_num) for player_num in range(1, players +1)]
         games = [Game(players, Die()) for num in range(0, game_num)]
+        CLI = True
+        index = 0
 
-        while len(games):
-            i = 0
-            current_game = games[i]
+        while CLI:
+            game_turns = len(games)
+            current_game = games[index]
             game_players = current_game.get_players()
 
             while(current_game.check_highest_score() < 100):
@@ -77,8 +79,8 @@ def main():
                     player.set_player_rolling_state(True)
 
 
-                    # while player.get_player_rolling_state() and current_game.check_highest_score()['player_score'] < 100:
-                    while player.get_player_rolling_state():
+                    while player.get_player_rolling_state() and current_game.check_highest_score() < 100:
+
                         player_input = input(f'Player {player.get_player_name()} would you like to ("r") roll or ("h") hold?\n')
                         
                         if player_input.lower() == 'h':
@@ -94,12 +96,14 @@ def main():
                             
                         else:
                             print("Hmm.. not sure what that was, please click on 'r' or 'h' ")
-                    
-                    if current_game.check_highest_score() >= 100:
-                        println("breaking loop")
-                        break 
-            
-        print(i, "game ended I think")
+
+            if index + 1 == game_turns:
+                CLI = False
+                print("ending...")
+            else: 
+                index = index + 1
+
+        print(index, "game ended I think")
 
 
 
