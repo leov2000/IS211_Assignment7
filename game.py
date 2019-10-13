@@ -24,12 +24,6 @@ class Game:
         highest_score.reverse()
 
         return highest_score[0]['player_score']
-
-    def current_score(self):
-        score_list = self.get_score_list()
-        sorted_score = sorted(score_list, key= lambda k: k['player_name'])
-
-        return sorted_score
     
     def hold(self, player):
         tally_sum = player.sum_tally()
@@ -46,11 +40,11 @@ class Game:
         else:
             player.append_score_tally(num)
 
-        return num 
+        return num
+    
+    def sum_tally(self, player):
+        return player.sum_tally()
     
     def get_players(self):
         return self.players
-
-    def get_die(self):
-        return self.die
-
+    

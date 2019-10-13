@@ -22,9 +22,6 @@ class Player:
     
     def add_to_score(self, score_num):
         self.score = self.score + score_num
-        
-    def get_player_score(self):
-        return self.score
 
     def get_player_name(self):
         return self.name
