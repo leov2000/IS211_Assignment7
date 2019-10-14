@@ -108,8 +108,11 @@ def print_game_winner(score_dict, game_num):
 
     name = score_dict.get('player_name')
     score = score_dict.get('player_score')
-
-    print(f'\nPlayer {name} won GAME:{game_num} with a SCORE OF: {score}\n')
+    print('\n')
+    print('*' * 51)
+    print(f'\nPlayer {name} won GAME:{game_num} with a SCORE OF: {score} !!!!\n')
+    print('*' * 51)
+    print('\n')
 
 def main():
     """
