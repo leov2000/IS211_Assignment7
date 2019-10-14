@@ -6,7 +6,6 @@ from game import Game
 from die import Die
 from player import Player
 
-
 def safe_int_checker(int_str):
     """
     A function that checks if the string is actually an int. used for the CLI.
@@ -31,7 +30,7 @@ def print_graphics(file_name):
     Parameters:
         file_name(<text_file>): A text file
     """
-    
+
     text_header = "$" * 51
 
     ascii_file = open(file_name, 'r')
@@ -114,7 +113,7 @@ def print_game_winner(score_dict, game_num):
 
 def main():
     """
-    The primary function of this application.
+    The primary function of this application that runs the game.
 
     Parameters:
         None
