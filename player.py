@@ -8,6 +8,8 @@ class Player:
     def reset_score(self):
         self.score = 0    
         self.tally = []
+
+        return (self.score, self.tally)
         
     def empty_score_tally(self):
         self.tally = []
@@ -29,3 +31,6 @@ class Player:
 
     def set_player_rolling_state(self, boolean):  
         self.rolling = boolean
+
+    def get_player_score(self):
+        return self.score 
