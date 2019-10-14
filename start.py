@@ -82,13 +82,13 @@ def main():
     parser.add_argument('--numPlayer', default=2)
     args = parser.parse_args()
 
-    logging.basicConfig(filename='errors.log', level=logging.ERROR, format='%(message)s')
+    logging.basicConfig(filename='errors_log/errors.log', level=logging.ERROR, format='%(message)s')
     logging.getLogger('assignment7')
 
     players = args.numPlayer
     (player_is_int, player_num) = safe_int_checker(players)
 
-    print_graphics('PIG-ART.txt')
+    print_graphics('artwork/PIG-ART.txt')
     keyed = input('\nHow many games do you want to play?\n')
     (game_is_int, game_num) = safe_int_checker(keyed)
 
@@ -142,7 +142,7 @@ def main():
         logging.error(f'Error processing games key: "{keyed}" & players key: "{players}"')
         return SystemExit
     
-    print_graphics('END.txt')
+    print_graphics('artwork/END.txt')
     print("\nThank you for playing PIG. Please run the script to play again!\n")
 
 if __name__ == '__main__':
