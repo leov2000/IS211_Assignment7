@@ -126,17 +126,17 @@ def main():
     """
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--numPlayer', default=2)
+    parser.add_argument('--numPlayers', default=2)
     args = parser.parse_args()
 
     logging.basicConfig(filename='errors_log/errors.log', level=logging.ERROR, format='%(message)s')
     logging.getLogger('assignment7')
 
-    players = args.numPlayer
+    players = args.numPlayers
     (player_is_int, player_num) = safe_int_checker(players)
 
     print_graphics('artwork/PIG-ART.txt')
-    keyed = input('\nHow many games do you want to play?\n')
+    keyed = input('\nHow many games would you like to play?\n')
     (game_is_int, game_num) = safe_int_checker(keyed)
 
     if game_is_int and player_is_int:
