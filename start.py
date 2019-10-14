@@ -81,8 +81,8 @@ def print_die_roll_message(num, player_name):
         num(int)
         player_name(str)
     """
-
-    print(f'Player {player_name} rolled a {num}! Adding it to the tally...\n')
+    roll_message = f'Player {player_name} rolled a {num} You lost a turn...\n' if num == 1 else f'Player {player_name} rolled a {num}! Adding it to the tally...\n'
+    print(roll_message)
 
 def get_winner(player_list):
     """
