@@ -7,9 +7,9 @@
 ### You'll be prompted with:  `How many games would you like to play?` Enter the game amount.
 
 ## Game Play:
-### A player will roll accumulating tally points until they decide to hold or roll a '1'. 
-### if they hold the tally points will be added to their overall score if they roll a '1' 
-### The tally points are lost. 
+### A player will roll the die and continue to roll, accumulating tally points until they decide to hold or they roll a '1'. 
+### If they hold the tally points will be added to their overall score. 
+### If they roll a '1' the tally points are lost. 
 
 ## Keys:
 ### 'r' : roll
