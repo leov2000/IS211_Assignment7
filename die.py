@@ -18,3 +18,6 @@ class Die:
         self.roll_count = self.roll_count + 1
 
         return self.side
+    
+    def get_die_state(self):
+        return (self.side, self.roll_count)
