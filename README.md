@@ -1,5 +1,5 @@
 ## Description
-### The game of Pig is a game where 2 players roll a die and ends when a player reaches 100 points
+### The game of Pig is a game where 2 players roll a die and ends when a player reaches 100 points.
 
 ## Game Instructions:
 ### To start the game use the following command: `python3 start.py`.
@@ -16,4 +16,4 @@
 ### 'h' : hold
 
 ## Tests:
-### Run the tests using the following command: `python3 tests.py`
+### Run the tests using the following command: `python3 tests.py` .
