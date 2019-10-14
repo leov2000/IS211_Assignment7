@@ -25,6 +25,13 @@ def safe_int_checker(int_str):
         return (False, None)
 
 def print_graphics(file_name):
+    """
+    A print utility function that prints out the PIG and END logo
+
+    Parameters:
+        file_name(<text_file>): A text file
+    """
+    
     text_header = "$" * 51
 
     ascii_file = open(file_name, 'r')
@@ -35,9 +42,24 @@ def print_graphics(file_name):
     print(text_header)
 
 def print_unintended_keystroke():
+    """
+    A print utility function that prints out an error message 
+
+    Parameters:None
+    """
+
     print("Hmm.. not sure what that was, please click on 'r' or 'h' ")
 
 def print_current_score(score_list, game_num, current_player = None):
+    """
+    A print utility function that prints out the curent score
+
+    Parameters:
+        score_list(list[dict[str, int]])
+        game_num(int)
+        current_player(<Player>)
+    """
+
     (player_name, player_tally) = (current_player.get_player_name(), current_player.sum_tally())
     text_header = '$' * 17 
     text_footer = '$' * 51
@@ -53,15 +75,38 @@ def print_current_score(score_list, game_num, current_player = None):
     print(text_footer)
 
 def print_die_roll_message(num, player_name):
+    """
+    A print utility function that prints out the player's current roll
+
+    Parameters:
+        num(int)
+        player_name(str)
+    """
+
     print(f'Player {player_name} rolled a {num}! Adding it to the tally...\n')
 
 def get_winner(player_list):
+    """
+    A utility function that retrieves the winner of the game when the game ends.
+    
+    Parameters:
+        player_list(list[dict[str, int]])
+    """
+
     highest_score = sorted(player_list, key= lambda k: k['player_score'])
     highest_score.reverse()
     
     return highest_score[0]
 
-def print_high_score(score_dict, game_num):
+def print_game_winner(score_dict, game_num):
+    """
+    A utility function that prints the game winner
+
+    Parameters:
+        score_dict(dict[str,int])
+        game_num(int)
+    """
+
     name = score_dict.get('player_name')
     score = score_dict.get('player_score')
 
@@ -126,10 +171,11 @@ def main():
 
                         else:
                             print_unintended_keystroke()
+                            logging.error(f'unintended_keystroke for Player: {player.get_player_name()} typed in: {player_input}')
                         
             if current_game.check_highest_score() >= 100:
                 high_scorer = get_winner(current_game.get_score_list())
-                print_high_score(high_scorer, index+1)
+                print_game_winner(high_scorer, index+1)
                 index = index + 1
                 current_game.reset_game()
 
