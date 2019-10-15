@@ -14,7 +14,7 @@ def main():
     Logs:
         An error if the string url is entered incorrectly.
     """
-
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--numPlayers', default=2)
     args = parser.parse_args()
